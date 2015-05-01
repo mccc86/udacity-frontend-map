@@ -1,47 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Place details</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+	<head>
+		<title>Place details</title>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 
-  </head>
-  <body>
-	  <div class="row">
-		  <div class="col-md-12">
-		    <form action="#"> 
-		        <input placeholder="Search…" type="search" name="q" data-bind="value: query, valueUpdate: 'keyup'" autocomplete="off"> 
-		    </form>
-	  	  </div>
-	  </div>
-	  <div id="map-canvas"></div>
-	  <div class="row">
-		<div class="col-md-3">
-			<div class="content"> 
-			    <ul data-bind="template: {name:'place', foreach:placesInEncino}"> 
-			    </ul> 
-			</div>
-		</div>
-		<div class="col-md-9">
-		</div>
-	  </div>
+	</head>
+	<body>
+		<div class="row">
+			<div class="col-md-12">
+					<input placeholder="Search" class="form-control" type="search" name="q" data-bind="value: query, valueUpdate: 'keyup'" autocomplete="off"> 
+			</div><!-- end of col-md-12 -->
+		</div><!-- end of row -->
+
+		<div class="row">
+			<div class="col-md-3">
+				<div class="content"> 
+					<ul data-bind="foreach:placesInEncino" class="list-group"> 
+						<li data-bind="event: { mouseover: $parent.logMouseOver }" class="list-group-item">
+							<strong data-bind="text: name"></strong>
+						</li>
+					</ul> 
+				</div><!-- end of content -->
+			</div><!-- end of col-md-3 -->
+			<div class="col-md-9">
+								<div id="map-canvas"></div>
+			</div><!-- end of col-md-9 -->
+		</div><!-- end of row -->
 
 
-
-	<script type="text/html" id="place"> 
-	    <li>
-	        <strong data-bind="text: name"></strong> –
-	        <span data-bind="text: address"></span> –
-	        <span data-bind="text: style"></span>
-	    </li>
-	</script>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
 	<!--<script src="js/jquery.js"></script>-->
 	<script src="js/knockout-3.3.0.js"></script>
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-    <script src="js/script.js"></script>
-  </body>
+	<script src="js/script.js"></script>
+	</body>
 </html>
