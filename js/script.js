@@ -81,7 +81,7 @@ function initialize() {
 	
 	
 	var callback = function(data) {
-		placesInEncino = data.response.venues.slice(0,9);
+		placesInEncino = data.response.venues.slice(0,15);
 		displayPlaces(map);
 		setupKO();
 	};
