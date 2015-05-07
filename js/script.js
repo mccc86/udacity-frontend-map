@@ -96,7 +96,7 @@ function getFoursquareData(callback) {
 	var clientId = 'PBXSACZTMPAFLIMEURWTEI4HRRONHERVT21KHLJQGUFRZU5M';
 	var clientSecret = 'AUUZ1ZUCFSYTXQHJCPMVBEKBTWA2AJO55AARMUUP3ZUD3C3O';
 	
-	var url =  'https://api.foursquare.com/v3/venues/search' +
+	var url =  'https://api.foursquare.com/v2/venues/search' +
 	'?ll=34.16,-118.52&client_id=' + clientId + 
 	'&client_secret=' + clientSecret + '&v=20150428';
 	
