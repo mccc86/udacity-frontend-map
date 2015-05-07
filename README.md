@@ -4,7 +4,7 @@ Then, I started by checking knockoutjs documentation and finding examples that f
 
 I found a code example that binds the search box with the list view, using knockoutjs.
 
-After all of the above, I started puttting this pieces together to create the map.
+After all of the above, I started puttting these pieces together to create the map.
 
 Also, I used foursquare api and jQuery ajax calls to request places around an specific location. 
 
