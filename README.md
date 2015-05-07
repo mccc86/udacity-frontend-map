@@ -8,12 +8,13 @@ After all of the above, I started puttting this pieces together to create the ma
 
 Also, I used foursquare api and jQuery ajax calls to request places around an specific location. 
 
+If you want to check it out, go to http://mccc86.github.io/map-project
 
 Resources:
-https://developers.google.com/maps/documentation/javascript/examples/map-simple
-http://jsfiddle.net/mythical/XJEzc/ 
-http://knockoutjs.com/documentation/textinput-binding.html
-https://developers.google.com/maps/documentation/javascript/examples/places-searchbox
-http://stackoverflow.com/questions/4269419/dynamic-google-map-infowindow-loading-content-of-last-record-in-loop
-https://developer.foursquare.com/docs/venues/venues
-http://api.jquery.com/jquery.getjson/
+- https://developers.google.com/maps/documentation/javascript/examples/map-simple
+- http://jsfiddle.net/mythical/XJEzc/ 
+- http://knockoutjs.com/documentation/textinput-binding.html
+- https://developers.google.com/maps/documentation/javascript/examples/places-searchbox
+-http://stackoverflow.com/questions/4269419/dynamic-google-map-infowindow-loading-content-of-last-record-in-loop
+- https://developer.foursquare.com/docs/venues/venues
+- http://api.jquery.com/jquery.getjson/
