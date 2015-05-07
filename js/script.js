@@ -96,11 +96,19 @@ function getFoursquareData(callback) {
 	var clientId = 'PBXSACZTMPAFLIMEURWTEI4HRRONHERVT21KHLJQGUFRZU5M';
 	var clientSecret = 'AUUZ1ZUCFSYTXQHJCPMVBEKBTWA2AJO55AARMUUP3ZUD3C3O';
 	
-	var url =  'https://api.foursquare.com/v2/venues/search' +
+	var url =  'https://api.foursquare.com/v3/venues/search' +
 	'?ll=34.16,-118.52&client_id=' + clientId + 
 	'&client_secret=' + clientSecret + '&v=20150428';
-
-	$.getJSON( url, callback);
+	
+	$.ajax({
+	  dataType: "json",
+	  url: url,
+	  success: callback,
+		error: function() {
+			callback(null);
+		}
+	});
+	
 }
 
 //main initalization function for google maps and the project in general.
@@ -114,6 +122,11 @@ function initialize() {
 	
 	
 	var callback = function(data) {
+
+		if(!data) {
+			return alert('FourSquare Api not available');
+		}
+		
 		placesInEncino = data.response.venues.slice(0,10);
 		displayPlaces(map);
 		setupKO();
