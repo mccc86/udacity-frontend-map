@@ -16,16 +16,16 @@
 		</div><!-- end of row -->
 
 		<div class="row">
-			<div class="col-md-3">
+			<div class="col-md-3 col-sm-3 col-xs-3">
 				<div class="content"> 
 					<ul data-bind="foreach:placesInEncino" class="list-group"> 
 						<li data-bind="event: { mouseover: $parent.logMouseOver }" class="list-group-item">
-							<strong data-bind="text: name"></strong>
+							<strong data-bind="text: name" class="list-styles"></strong>
 						</li>
 					</ul> 
 				</div><!-- end of content -->
 			</div><!-- end of col-md-3 -->
-			<div class="col-md-9">
+			<div class="col-md-9 col-sm-9 col-xs-9">
 								<div id="map-canvas"></div>
 			</div><!-- end of col-md-9 -->
 		</div><!-- end of row -->
