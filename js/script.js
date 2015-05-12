@@ -36,7 +36,7 @@
         place.marker.setMap(map);
       }
 
-    }
+    };
 
     /**
      * Callback utility method for ajax request
@@ -55,7 +55,7 @@
       //trigger value change for to fix race condition
       self.query('');
       
-    }
+    };
 
     /**
      * Contrustor FourSquare API call. 
@@ -65,7 +65,15 @@
       var clientId = 'PBXSACZTMPAFLIMEURWTEI4HRRONHERVT21KHLJQGUFRZU5M';
       var clientSecret = 'AUUZ1ZUCFSYTXQHJCPMVBEKBTWA2AJO55AARMUUP3ZUD3C3O';
       
-      var url =  'https://api.foursquare.com/v2/venues/search?ll=' + self.centerLat+','+ self.centerLon +' &client_id=' + clientId + '&client_secret=' + clientSecret + '&v=20150428';
+      var url =  'https://api.foursquare.com/v2/venues/search?ll=' 
+        + self.centerLat 
+        + ' , '
+        + self.centerLon 
+        + '&client_id=' 
+        + clientId 
+        + '&client_secret=' 
+        + clientSecret 
+        + '&v=20150428';
       
       $.ajax({
         dataType: "json",
@@ -75,16 +83,15 @@
           self.handlePlaces(null);
         }
       });
-    }
+    };
 
     ko.bindingHandlers.googlemap = {
-      init: function (element, valueAccessor) {
-
+      init: function(element, valueAccessor) {
           var value = valueAccessor();
           self.centerLat = value.centerLat;
           self.centerLon = value.centerLon;
           var mapOptions = {
-              zoom: 15,
+              zoom: 17,
               center: new google.maps.LatLng(value.centerLat, value.centerLon),
               mapTypeId: google.maps.MapTypeId.ROADMAP
           };
@@ -126,7 +133,7 @@
           infoWindow.open(self.map, this);
         });
       }
-    }
+    };
 
     /**
      * KO places array binding. Everytime the a user is typing in
@@ -138,7 +145,7 @@
       //get user input (needle)
       var search = self.query().toLowerCase().trim();
       
-      if( search.length == 0 ) return self.places;
+      if( search.length === 0 ) return self.places;
 
       //hides all markers on the map
       self.setAllMarkers(null);
@@ -156,7 +163,7 @@
         return false;
       });
     }, self);
-  }
+  };
   
   ko.applyBindings(new AppViewModel());
 
